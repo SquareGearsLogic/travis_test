@@ -3,19 +3,18 @@ language: cpp
 compiler:
   - gcc
 
-install: true
+before_install:
+  - sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
+  - sudo apt-get update -q
+  - sudo apt-get install gcc-4.9.2 -y
 
-addons:
-  apt:
-    sources:
-    - ubuntu-toolchain-r-test
-    packages:
-    - gcc-4.9
+install: true
 
 before_script:
  mkdir build
  cd build
  cmake .. -DCMAKE_BUILD_TYPE=Release
+ gcc --version
 
 script:
  make
