@@ -37,7 +37,7 @@ after_success:
                    --pkggroup "misc" --pkglicense "GNU General Public License, Version 3" 
   - pwd
   - ls
-  - sudo apt-get install apps_*_amd64.deb
+  - sudo dpkg -i apps_*_amd64.deb
   - cd ..
   - pwd
   - ls
