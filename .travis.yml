@@ -20,7 +20,8 @@ script:
  make
 
 notifications:
-  email: 
-    - sendspam@mail2nowhere.com
+  email:
+    recipients:
+      - sendspam@mail2nowhere.com
     on_success: always
     on_failure: always
