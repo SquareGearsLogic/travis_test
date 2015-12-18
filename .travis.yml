@@ -7,16 +7,24 @@ before_install:
   - sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
   - sudo apt-get update -qq
   - sudo apt-get install gcc-4.9 g++-4.9 -y --force-yes
-  - export CXX="g++-4.9"
-  - export CC="gcc-4.9"
 
 install: true
 
 before_script:
+  - gcc --version
+  - /usr/bin/g++-4.9 --version
+  - /usr/bin/gcc-4.9 --version
+
+  - export CXX="g++-4.9"
+  - export CC="gcc-4.9"
+
+  - wget https://bitbucket.org/moswald/xunit/downloads/xUnit++.1.3.2.tar.gz
+  - tar -zxvf xUnit++.1.3.2.tar.gz
+  - pwd
   - mkdir build
+  - ls
   - cd build
   - cmake .. -DCMAKE_BUILD_TYPE=Release
-  - gcc --version
 
 script:
   - make
@@ -27,6 +35,12 @@ after_success:
                    --pkgarch "amd64" --pkgrelease "1" --maintainer "Travis" 
                    --pkgsource "https://github.com/anton-seliverstov/Apps.git" 
                    --pkggroup "misc" --pkglicense "GNU General Public License, Version 3" 
+  - pwd
+  - ls
+  - sudo apt-get install apps_*_amd64.deb
+  - cd ..
+  - pwd
+  - ls
 
 notifications:
   email:
