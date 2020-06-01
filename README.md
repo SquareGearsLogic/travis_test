@@ -1,14 +1,23 @@
 # travis_test
 How to get a travis yml file to do what I want.
 
-| c1   | c2    |
-|------|------:|
+| qwerqwerqwerqwer | qwerqwerqwerqwer |
+|-|-:|
+| haha | hoho<br>trololo |
+
+| qwerqwerqwerqwer | qwerqwerqwerqwer |
+|-|-:|
 | haha | hoho
 trololo |
 
+|----|----:|
+| haha | hoho
+trololo |
 
+|------|------:|
 | haha | hoho<br>trololo |
 
+| haha | hoho<br>trololo |
 
 table1:
 <table>
